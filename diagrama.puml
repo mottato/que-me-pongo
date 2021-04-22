@@ -1,0 +1,99 @@
+@startuml
+
+class Cliente {
+    guardarropas
+    cargarPrenda(prenda)
+    generarAtuendo()
+}
+
+class Guardarropas {
+    prendas
+}
+
+class Prenda {
+    tipoDePrenda
+    colorPrincipal
+    colorSecundario
+    material
+}
+
+class FabricaDePrenda {
+    colorPrincipal
+    agregarTipoDePrenda()
+    agregarMaterial()
+    agregarColorPrincipal()
+    crearPrenda()
+}
+
+abstract class TipoDePrenda {
+    descripcion
+    categoria
+}
+
+class Zapatos {
+    categoria
+}
+
+class CamisaMangaCorta {
+    categoria
+}
+
+class Pantalon {
+    categoria
+}
+
+enum Categoria {
+    PARTE_SUPERIOR,
+    CALZADO,
+    PARTE_INFERIOR,
+    ACCESORIOS
+}
+
+class Material {
+    tela
+    elasticidad
+}
+
+class Atuendo {
+    prendas
+}
+
+Cliente --> Guardarropas
+Cliente ..> Atuendo
+Guardarropas --> Prenda
+
+Prenda --> TipoDePrenda
+Prenda --> Material
+Prenda --> FabricaDePrenda
+
+FabricaDePrenda ..> TipoDePrenda
+FabricaDePrenda ..> Material
+
+TipoDePrenda --> Categoria
+TipoDePrenda <|-- Zapatos
+TipoDePrenda <|-- CamisaMangaCorta
+TipoDePrenda <|-- Pantalon
+
+'interface FactorClimatico {
+'
+'}
+'
+'class Temperatura {
+'}
+'
+'class Viento {
+'}
+'
+'class Sol {
+'}
+'
+'class Lluvia {
+'}
+
+
+'FactorClimatico <|.. Temperatura
+'FactorClimatico <|.. Viento
+'FactorClimatico <|.. Sol
+'FactorClimatico <|.. Lluvia
+
+@enduml
