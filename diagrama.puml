@@ -18,10 +18,6 @@ class Prenda {
 }
 
 class FabricaDePrenda {
-    colorPrincipal
-    agregarTipoDePrenda()
-    agregarMaterial()
-    agregarColorPrincipal()
     crearPrenda()
 }
 
