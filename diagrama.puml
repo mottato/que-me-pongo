@@ -5,6 +5,12 @@ class Prenda {
     colorPrincipal
     colorSecundario
     material
+    esBorrador
+
+    guardarPrenda()
+    guardarBorrador()
+    primerPaso(tipoDePrenda)
+    segundoPaso(material, color1, color2)
 }
 
 class TipoDePrenda {
@@ -25,15 +31,48 @@ enum Categoria {
     ACCESORIOS
 }
 
-enum Material {
+class Material {
+    tela
+    trama
+}
+
+enum Tela {
     CUERO
     JEAN
+}
+
+enum Trama {
+    LISA,
+    RAYADA,
+    LUNARES,
+    CUADROS,
+    ESTAMPADA
 }
 
 Prenda --> TipoDePrenda
 Prenda --> Material
 
+Material --> Tela
+Material --> Trama
+
 TipoDePrenda --> Tipo
 TipoDePrenda --> Categoria
 
+
+'============= UNIFORME ===============
+class Uniforme {
+    superior
+    inferior
+    calzado
+    institucion
+
+    Uniforme(superior, inferior, calzado, institucion)
+}
+
+class Usuario {
+    obtenerSugerencia()
+}
+
+Uniforme <.. Prenda
+Usuario <.. Uniforme
 @enduml

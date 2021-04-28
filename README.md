@@ -9,25 +9,11 @@ QuéMePongo es una empresa dedicada al armado de atuendos adecuados a las condic
 
 ### Primera Iteración
 
-Comenzaremos definiendo que un atuendo es una combinación de prendas que tiene sentido usar juntas. Algunos ejemplos de atuendos podrían ser:
-- Tus anteojos de sol favoritos, una remera de mangas cortas azul, el pantalón que te regaló tu mamá y unas zapatillas converse.
-- Un pañuelo verde, una remera de mangas largas rayada, un pantalón de jean y un par de botas de cuero.
-- Una musculosa de mickey, una pollera amarilla y unas crocs.
+[Link](https://docs.google.com/document/d/1k1f-9AuIohlBGB2soSNePJ6jLxM37_tZeSD-hW_esIQ/edit)
 
-Como primer paso para generar los atuendos, les usuaries de QuéMePongo identificaron el siguiente requerimiento como principal:
+### Segunda Iteración
 
-`Como usuarie de QuéMePongo, quiero poder cargar prendas válidas para generar atuendos con ellas.`
-
-
-Y luego, al consultar más sobre este requerimiento general, logramos descomponerlo con mayor detalle en los siguientes:
-- Como usuarie de QuéMePongo, quiero especificar qué tipo de prenda estoy cargando (zapatos, camisa de mangas cortas, pantalón, etc).
-- Como usuarie de QuéMePongo, quiero identificar a qué categoría pertenece una prenda (parte superior, calzado, parte inferior, accesorios).
-- Como usuarie de QuéMePongo, quiero poder indicar de qué tela o material está hecha una prenda
-- Como usuarie de QuéMePongo, quiero poder indicar un color principal para mis prendas
-- Como usuarie de QuéMePongo, quiero poder indicar, si existe, un color secundario para mis prendas.
-- Como usuarie de QuéMePongo, quiero evitar que haya prendas sin tipo, tela, categoría o color primario
-- Como usuarie de QuéMePongo, quiero evitar que haya prendas cuya categoría no se condiga con su tipo. (Ej, una remera no puede ser calzado).
-
+[Link](https://docs.google.com/document/d/10j6XB9zIhl5xox2xBEDEFsgPmueHMkyvLSHcLxl_27Y/edit#heading=h.uyku9mnteh0t)
 
 
 ## Ejecutar tests
