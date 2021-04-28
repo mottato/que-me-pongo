@@ -1,4 +1,4 @@
-package Prenda;
+package Prenda.TipoDePrenda;
 
 public enum Categoria {
     PARTE_SUPERIOR,
