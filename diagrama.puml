@@ -1,16 +1,19 @@
 @startuml
+class Borrador {
+    tipoDePrenda
+    colorPrincipal
+    colorSecundario
+    material
+    trama
+    crearPrenda()
+}
 
 class Prenda {
     tipoDePrenda
     colorPrincipal
     colorSecundario
     material
-    esBorrador
-
-    guardarPrenda()
-    guardarBorrador()
-    primerPaso(tipoDePrenda)
-    segundoPaso(material, color1, color2)
+    trama
 }
 
 class TipoDePrenda {
@@ -31,12 +34,7 @@ enum Categoria {
     ACCESORIOS
 }
 
-class Material {
-    tela
-    trama
-}
-
-enum Tela {
+enum Material {
     CUERO
     JEAN
 }
@@ -51,9 +49,12 @@ enum Trama {
 
 Prenda --> TipoDePrenda
 Prenda --> Material
+Prenda --> Trama
 
-Material --> Tela
-Material --> Trama
+Borrador --> TipoDePrenda
+Borrador --> Material
+Borrador --> Trama
+Borrador ..> Prenda
 
 TipoDePrenda --> Tipo
 TipoDePrenda --> Categoria
