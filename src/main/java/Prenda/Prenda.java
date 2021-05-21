@@ -10,21 +10,16 @@ public class Prenda {
     private final String colorSecundario;
     private final Material material;
     private final Trama trama;
+    private final double temperaturaMaxima;
 
-    public Prenda(TipoDePrenda tipoDePrenda, String colorPrincipal, Material material, Trama trama) {
-        this.tipoDePrenda = tipoDePrenda;
-        this.colorPrincipal = colorPrincipal;
-        this.trama = trama;
-        this.colorSecundario = null;
-        this.material = material;
-    }
-
-    public Prenda(TipoDePrenda tipoDePrenda, String colorPrincipal, String colorSecundario, Material material, Trama trama) {
+    public Prenda(TipoDePrenda tipoDePrenda, String colorPrincipal, String colorSecundario, Material material,
+                  Trama trama, double temperaturaMaxima) {
         this.tipoDePrenda = tipoDePrenda;
         this.colorPrincipal = colorPrincipal;
         this.colorSecundario = colorSecundario;
         this.material = material;
         this.trama = trama;
+        this.temperaturaMaxima = temperaturaMaxima;
     }
 
     public TipoDePrenda getTipoDePrenda() {
@@ -41,5 +36,13 @@ public class Prenda {
 
     public Material getMaterial() {
         return material;
+    }
+
+    public Trama getTrama() {
+        return trama;
+    }
+
+    public double getTemperaturaMaxima() {
+        return temperaturaMaxima;
     }
 }

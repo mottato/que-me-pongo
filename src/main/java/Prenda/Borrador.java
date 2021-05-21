@@ -12,6 +12,7 @@ public class Borrador {
     private String colorSecundario;
     private Material material;
     private Trama trama = Trama.LISA;
+    private double temperaturaApta;
 
     public Borrador configurarTipoDePrenda(TipoDePrenda tipoDePrenda){
         this.tipoDePrenda = Objects.requireNonNull(tipoDePrenda, "Debe seleccionar un tipo de prenda");
@@ -38,9 +39,15 @@ public class Borrador {
         return this;
     }
 
+    private Borrador configurarTemperaturaApta(double temperaturaApta) {
+        this.temperaturaApta = temperaturaApta;
+        return this;
+
+    }
+
     private Prenda crearPrenda() {
         chequearPrendaValida();
-        return new Prenda(this.tipoDePrenda, this.colorPrincipal, this.colorSecundario, this.material, this.trama);
+        return new Prenda(this.tipoDePrenda, this.colorPrincipal, this.colorSecundario, this.material, this.trama, this.temperaturaApta);
     }
 
     private void chequearPrendaValida() {
