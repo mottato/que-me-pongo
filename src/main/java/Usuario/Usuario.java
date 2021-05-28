@@ -4,13 +4,15 @@ import Clima.ServicioClimatico;
 import Guardarropas.RepositorioDeGuardarropas;
 import Prenda.Prenda;
 import Prenda.GeneradorDeSugerencias;
+import Propuesta.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
 
-  private List<String> idsGuardarropas = new ArrayList<>();
+  private final List<String> idsGuardarropas = new ArrayList<>();
+  private final List<Propuesta> propuestas = new ArrayList<>();
   private final ServicioClimatico servicioClimatico;
   private final GeneradorDeSugerencias generadorDeSugerencias;
   private final RepositorioDeGuardarropas repositorioDeGuardarropas;
@@ -39,5 +41,23 @@ public class Usuario {
 
   public void agregarPrendaAGuardarropas(Prenda prenda, String idGuardarropas){
     repositorioDeGuardarropas.agregarPrendaAGuardarropas(idGuardarropas, prenda);
+  }
+
+  public List<Propuesta> getPropuestas() {
+    return propuestas;
+  }
+
+  public void recibirPropuesta(Prenda prenda, AccionPropuesta accion, String idGuardarropas) {
+    Propuesta nuevaPropuesta = new Propuesta(idGuardarropas, prenda, accion);
+    propuestas.add(nuevaPropuesta);
+  }
+
+  public void aceptarPropuesta(Propuesta propuesta) {
+    propuesta.aceptarPropuesta();
+    propuesta.ejecutarAccionPropuesta(repositorioDeGuardarropas);
+  }
+
+  public void rechazarPropuesta(Propuesta propuesta) {
+    propuesta.rechazarPropuesta();
   }
 }

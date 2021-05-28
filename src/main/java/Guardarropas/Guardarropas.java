@@ -32,4 +32,8 @@ public class Guardarropas {
   public String getIdGuardarropas() {
     return idGuardarropas;
   }
+
+  public void quitarPrenda(Prenda prenda) {
+    this.prendas.remove(prenda);
+  }
 }

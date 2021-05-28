@@ -13,10 +13,7 @@ public class RepositorioDeGuardarropas {
   }
 
   public void agregarPrendaAGuardarropas(String idGuardarropas, Prenda prenda) {
-    guardarropas.stream()
-        .filter(guardarropa -> guardarropa.getIdGuardarropas().equals(idGuardarropas))
-        .findFirst().orElseThrow(GuardarropasNoExistente::new)
-        .agregarPrenda(prenda);
+    obtenerGuardarropas(idGuardarropas).agregarPrenda(prenda);
   }
 
   public List<Guardarropas> getGuardarropas() {
@@ -27,5 +24,15 @@ public class RepositorioDeGuardarropas {
     Guardarropas nuevoGuardarropas = new Guardarropas(prendas, descripcion);
     guardarropas.add(nuevoGuardarropas);
     return nuevoGuardarropas.getIdGuardarropas();
+  }
+
+  public Guardarropas obtenerGuardarropas(String idGuardarropas) {
+    return guardarropas.stream()
+        .filter(guardarropa -> guardarropa.getIdGuardarropas().equals(idGuardarropas))
+        .findFirst().orElseThrow(GuardarropasNoExistente::new);
+  }
+
+  public void quitarPrenda(Prenda prenda, String idGuardarropas) {
+    obtenerGuardarropas(idGuardarropas).quitarPrenda(prenda);
   }
 }
