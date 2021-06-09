@@ -1,4 +1,4 @@
-package Prenda.Material;
+package prenda.material;
 
 public enum Trama {
     LISA,

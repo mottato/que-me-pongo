@@ -1,7 +1,7 @@
-package Propuesta;
+package propuesta;
 
-import Guardarropas.RepositorioDeGuardarropas;
-import Prenda.Prenda;
+import guardarropas.RepositorioDeGuardarropas;
+import prenda.Prenda;
 
 public class AccionQuitar implements AccionPropuesta{
 

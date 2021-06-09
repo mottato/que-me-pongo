@@ -1,4 +1,4 @@
-package Excepciones;
+package excepciones;
 
 public class SoloSePuedenDeshacerPropuestasAceptadas extends RuntimeException {
   public SoloSePuedenDeshacerPropuestasAceptadas() {

@@ -1,8 +1,7 @@
-package Propuesta;
+package propuesta;
 
-import Excepciones.SoloSePuedenDeshacerPropuestasAceptadas;
-import Guardarropas.RepositorioDeGuardarropas;
-import Prenda.Prenda;
+import guardarropas.RepositorioDeGuardarropas;
+import prenda.Prenda;
 
 public class Propuesta {
   private final Prenda prendaPropuesta;
@@ -37,11 +36,9 @@ public class Propuesta {
   }
 
   public void deshacerPropuesta(RepositorioDeGuardarropas repositorioDeGuardarropas) {
-    if (estado == EstadoPropuesta.ACEPTADO) {
-      accionPropuesta.deshacer(prendaPropuesta, idGuardarropas, repositorioDeGuardarropas);
-    } else {
-      throw new SoloSePuedenDeshacerPropuestasAceptadas();
-    }
+    // Confío en el adentro, en que la acción propuesta si o si va a ser una propuesta aceptada
+    accionPropuesta.deshacer(prendaPropuesta, idGuardarropas, repositorioDeGuardarropas);
+    this.estado = EstadoPropuesta.PENDIENTE;
   }
 
   public void aceptarPropuesta() {

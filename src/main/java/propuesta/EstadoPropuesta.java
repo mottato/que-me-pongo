@@ -1,4 +1,4 @@
-package Propuesta;
+package propuesta;
 
 public enum EstadoPropuesta {
   ACEPTADO,

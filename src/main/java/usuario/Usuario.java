@@ -1,10 +1,10 @@
-package Usuario;
+package usuario;
 
-import Clima.ServicioClimatico;
-import Guardarropas.RepositorioDeGuardarropas;
-import Prenda.Prenda;
-import Prenda.GeneradorDeSugerencias;
-import Propuesta.*;
+import clima.ServicioClimatico;
+import guardarropas.RepositorioDeGuardarropas;
+import prenda.Prenda;
+import prenda.GeneradorDeSugerencias;
+import propuesta.*;
 
 import java.util.ArrayList;
 import java.util.List;

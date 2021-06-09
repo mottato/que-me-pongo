@@ -1,4 +1,4 @@
-package Clima;
+package clima;
 
 public interface ServicioClimatico {
     String CIUDAD = "Buenos Aires, Argentina";

@@ -1,4 +1,4 @@
-package Prenda;
+package prenda;
 
 import java.util.List;
 

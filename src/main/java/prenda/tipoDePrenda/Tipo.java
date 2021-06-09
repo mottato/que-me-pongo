@@ -1,4 +1,4 @@
-package Prenda.TipoDePrenda;
+package prenda.tipoDePrenda;
 
 public enum Tipo {
     ZAPATOS,

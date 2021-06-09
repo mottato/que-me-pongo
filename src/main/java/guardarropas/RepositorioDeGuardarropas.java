@@ -1,7 +1,7 @@
-package Guardarropas;
+package guardarropas;
 
-import Excepciones.GuardarropasNoExistente;
-import Prenda.Prenda;
+import excepciones.GuardarropasNoExistente;
+import prenda.Prenda;
 
 import java.util.ArrayList;
 import java.util.List;

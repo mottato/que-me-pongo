@@ -1,6 +1,6 @@
-package Guardarropas;
+package guardarropas;
 
-import Prenda.Prenda;
+import prenda.Prenda;
 
 import java.util.ArrayList;
 import java.util.List;

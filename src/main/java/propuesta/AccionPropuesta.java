@@ -1,7 +1,7 @@
-package Propuesta;
+package propuesta;
 
-import Guardarropas.RepositorioDeGuardarropas;
-import Prenda.Prenda;
+import guardarropas.RepositorioDeGuardarropas;
+import prenda.Prenda;
 
 public interface AccionPropuesta {
   void ejecutar(Prenda prenda, String idGuardarropas, RepositorioDeGuardarropas repositorioDeGuardarropas);

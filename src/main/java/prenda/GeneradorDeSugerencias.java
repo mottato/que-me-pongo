@@ -1,9 +1,6 @@
-package Prenda;
+package prenda;
 
-import Usuario.Atuendo;
-import Guardarropas.Guardarropas;
-
-import java.util.List;
+import usuario.Atuendo;
 
 public class GeneradorDeSugerencias {
   public Atuendo sugerirAtuendo(double temperatura) {

@@ -1,4 +1,4 @@
-package Clima;
+package clima;
 
 import java.util.HashMap;
 

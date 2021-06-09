@@ -1,8 +1,8 @@
-package Prenda;
+package prenda;
 
-import Prenda.Material.Material;
-import Prenda.Material.Trama;
-import Prenda.TipoDePrenda.TipoDePrenda;
+import prenda.material.Material;
+import prenda.material.Trama;
+import prenda.tipoDePrenda.TipoDePrenda;
 
 import java.util.Objects;
 
