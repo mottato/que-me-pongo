@@ -1,6 +1,6 @@
 package clima;
 
-public interface ServicioClimatico {
+public interface ServicioMeteorologico {
     String CIUDAD = "Buenos Aires, Argentina";
 
     double getTemperatura();

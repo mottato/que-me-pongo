@@ -1,9 +1,8 @@
 package usuario;
 
-import clima.ServicioClimatico;
-import guardarropas.RepositorioDeGuardarropas;
+import excepciones.GuardarropasNoExistente;
+import guardarropas.Guardarropas;
 import prenda.Prenda;
-import prenda.GeneradorDeSugerencias;
 import propuesta.*;
 
 import java.util.ArrayList;
@@ -11,36 +10,24 @@ import java.util.List;
 
 public class Usuario {
 
-  private final List<String> idsGuardarropas = new ArrayList<>();
+  private final List<Guardarropas> guardarropas = new ArrayList<>();
   private final List<Propuesta> propuestas = new ArrayList<>();
-  private final ServicioClimatico servicioClimatico;
-  private final GeneradorDeSugerencias generadorDeSugerencias;
-  private final RepositorioDeGuardarropas repositorioDeGuardarropas;
 
-  private Usuario(ServicioClimatico servicioClimatico,
-                  GeneradorDeSugerencias generadorDeSugerencias,
-                  RepositorioDeGuardarropas repositorioDeGuardarropas) {
-    this.servicioClimatico = servicioClimatico;
-    this.generadorDeSugerencias = generadorDeSugerencias;
-    this.repositorioDeGuardarropas = repositorioDeGuardarropas;
-  }
+  private Usuario() {
 
-  public Atuendo sugerirAtuendo() {
-    double temperatura = servicioClimatico.getTemperatura();
-    return generadorDeSugerencias.sugerirAtuendo(temperatura);
   }
 
   public void crearGuardarropas(List<Prenda> prendas, String descripcion) {
-    String idNuevoGuardarropa = repositorioDeGuardarropas.crearGuardarropas(prendas, descripcion);
-    idsGuardarropas.add(idNuevoGuardarropa);
+    Guardarropas nuevoGuardarropas = new Guardarropas(prendas, descripcion);
+    guardarropas.add(nuevoGuardarropas);
   }
 
-  public void agregarGuardarropasExistente(String idGuardarropa) {
-    this.idsGuardarropas.add(idGuardarropa);
+  public void agregarGuardarropasExistente(Guardarropas guadarropasExistente) {
+    this.guardarropas.add(guadarropasExistente);
   }
 
-  public void agregarPrendaAGuardarropas(Prenda prenda, String idGuardarropas){
-    repositorioDeGuardarropas.agregarPrendaAGuardarropas(idGuardarropas, prenda);
+  public void agregarPrendaAGuardarropas(Prenda prenda, String idGuardarropasDeseado){
+    getGuardarropas(idGuardarropasDeseado).agregarPrenda(prenda);
   }
 
   public List<Propuesta> getPropuestas() {
@@ -54,10 +41,20 @@ public class Usuario {
 
   public void aceptarPropuesta(Propuesta propuesta) {
     propuesta.aceptarPropuesta();
-    propuesta.ejecutarAccionPropuesta(repositorioDeGuardarropas);
+    propuesta.ejecutarAccionPropuesta(this);
   }
 
   public void rechazarPropuesta(Propuesta propuesta) {
     propuesta.rechazarPropuesta();
+  }
+
+  public void quitarPrendaDeGuardarropas(Prenda prenda, String idGuardarropas) {
+    getGuardarropas(idGuardarropas).quitarPrenda(prenda);
+  }
+
+  private Guardarropas getGuardarropas(String idGuardarropas) {
+    return guardarropas.stream()
+        .filter(guardarropa -> guardarropa.getIdGuardarropas().equals(idGuardarropas))
+        .findFirst().orElseThrow(GuardarropasNoExistente::new);
   }
 }

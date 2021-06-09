@@ -1,7 +1,7 @@
 package propuesta;
 
-import guardarropas.RepositorioDeGuardarropas;
 import prenda.Prenda;
+import usuario.Usuario;
 
 public class Propuesta {
   private final Prenda prendaPropuesta;
@@ -31,13 +31,13 @@ public class Propuesta {
     return idGuardarropas;
   }
 
-  public void ejecutarAccionPropuesta(RepositorioDeGuardarropas repositorioDeGuardarropas){
-    accionPropuesta.ejecutar(prendaPropuesta, idGuardarropas, repositorioDeGuardarropas);
+  public void ejecutarAccionPropuesta(Usuario duenio){
+    accionPropuesta.ejecutar(prendaPropuesta, idGuardarropas, duenio);
   }
 
-  public void deshacerPropuesta(RepositorioDeGuardarropas repositorioDeGuardarropas) {
+  public void deshacerPropuesta(Usuario duenio) {
     // Confío en el adentro, en que la acción propuesta si o si va a ser una propuesta aceptada
-    accionPropuesta.deshacer(prendaPropuesta, idGuardarropas, repositorioDeGuardarropas);
+    accionPropuesta.deshacer(prendaPropuesta, idGuardarropas, duenio);
     this.estado = EstadoPropuesta.PENDIENTE;
   }
 
