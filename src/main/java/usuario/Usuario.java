@@ -1,5 +1,7 @@
 package usuario;
 
+import clima.Alerta;
+import clima.ServicioMeteorologico;
 import excepciones.GuardarropasNoExistente;
 import guardarropas.Guardarropas;
 import prenda.Prenda;
@@ -63,4 +65,9 @@ public class Usuario {
     return sugerencia.generarSugerencia();
   }
 
+  public void actualizarSugerenciaSegunClima(){
+    Alerta alertas = new Alerta();
+    alertas.getAlertas();
+    sugerencia.generarSugerencia();
+  }
 }
