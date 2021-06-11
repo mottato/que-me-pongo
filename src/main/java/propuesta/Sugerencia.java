@@ -6,10 +6,14 @@ import java.util.List;
 import java.util.Random;
 
 public class Sugerencia {
-  static List<Atuendo> atuendosSugeridos;
+   private List<Atuendo> atuendosSugeridos;
 
-  public static  Atuendo generarSugerencia(){   // Se me ocurrio que puede tomar una prenda de manera alaeatoria
+  public Atuendo generarSugerencia(){   // Se me ocurrio que puede tomar una prenda de manera alaeatoria
     Random atuendoRandom = new Random();
+    this.filtrarPorAlerta();
     return atuendosSugeridos.get(atuendoRandom.nextInt(atuendosSugeridos.size()));
+  }
+  public List<Atuendo> filtrarPorAlerta(){
+    return atuendosSugeridos;
   }
 }

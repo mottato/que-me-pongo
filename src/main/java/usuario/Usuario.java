@@ -12,6 +12,7 @@ public class Usuario {
 
   private final List<Guardarropas> guardarropas = new ArrayList<>();
   private final List<Propuesta> propuestas = new ArrayList<>();
+  private Sugerencia sugerencia;
 
   private Usuario() {
 
@@ -59,7 +60,7 @@ public class Usuario {
   }
 
   public Atuendo obtenerSugerencia() {
-    return Sugerencia.generarSugerencia();
+    return sugerencia.generarSugerencia();
   }
 
 }
