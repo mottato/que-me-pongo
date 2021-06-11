@@ -26,7 +26,7 @@ public class Usuario {
     this.guardarropas.add(guadarropasExistente);
   }
 
-  public void agregarPrendaAGuardarropas(Prenda prenda, String idGuardarropasDeseado){
+  public void agregarPrendaAGuardarropas(Prenda prenda, String idGuardarropasDeseado) {
     getGuardarropas(idGuardarropasDeseado).agregarPrenda(prenda);
   }
 
@@ -57,4 +57,9 @@ public class Usuario {
         .filter(guardarropa -> guardarropa.getIdGuardarropas().equals(idGuardarropas))
         .findFirst().orElseThrow(GuardarropasNoExistente::new);
   }
+
+  public Atuendo obtenerSugerencia() {
+    return Sugerencia.generarSugerencia();
+  }
+
 }
