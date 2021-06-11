@@ -70,4 +70,6 @@ public class Usuario {
     alertas.getAlertas();
     sugerencia.generarSugerencia();
   }
+  public void llevarParaguas(){}
+  public void viajarEnAuto(){}
 }
